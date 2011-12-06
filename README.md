@@ -34,7 +34,7 @@ siteCrawl.toObservable().Subscribe(function(crawlResult) {
 },
 // on err
 function(exn){
-  console.log('Ooo dem Dukes with exception:' + exn);
+  console.log('Ooo dem Dukes...with exception:' + exn);
 },
 // on crawl complete
 function(){
