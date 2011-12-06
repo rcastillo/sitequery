@@ -15,7 +15,7 @@
   - Site crawls have use a redis store to track visitation and insure a crawl is cycle-free
   - Supports the latest jQuery version
 
-## Crawling a website using SiteCrawl
+## Crawling a website using SiteCrawl observable
 *(From: /examples/hello-crawl.js)*
 
 Allows you to crawl to a depth of *n* into a website
@@ -38,6 +38,34 @@ function(exn){
 // on crawl complete
 function(){
 console.log('SiteCrawl complete');
+});
+```
+
+## Executing a jQuery selector on a site using SiteQuery observable
+*(From: /examples/hello-query.js)*
+
+Execute jQuery selector to a depth of *n* on a website
+```javascript
+var SiteCrawl = require('./lib/sitequery').SiteQuery;
+
+// create a new SiteQuery of depth 2 with a delay of 1s between next page crawl
+// selecting for `img` elements on each page
+// Note: Webcrawling is delayed and will not be executed
+// until Subscription
+var siteCrawl = new SiteCrawl(url, query.depth, 1000, 'img');
+
+// ask for the observable sequence and subscribe for selected jQuery element(s)
+siteCrawl.toObservable().Subscribe(function(elem) {
+  // output the img src                 
+  console.log(elem.attr('src'));
+},
+// on err
+function(exn){
+  console.log('Something blow'd up with exception:' + exn);
+},
+// on crawl complete
+function(){
+  console.log('SiteQuery complete');
 });
 ```
 
