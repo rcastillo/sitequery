@@ -4,7 +4,9 @@
 ## Overview
 `sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables web crawling through server-side execution of [jQuery selectors](http://api.jquery.com/category/selectors/).
 
-## npm install
+## Installation
+
+### npm install
 [sudo] npm install sitequery
 
 ## Features
@@ -15,7 +17,9 @@
   - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once)
   - Supports the latest jQuery version
 
-## Crawling a website using SiteCrawl observable
+## Usage
+
+### Crawling a website using SiteCrawl observable
 *(From: /examples/hello-crawl.js)*
 
 Allows you to crawl to a depth of *n* into a website
@@ -42,7 +46,7 @@ function(){
 });
 ```
 
-## Executing a jQuery selector on a site using SiteQuery observable
+### Executing a jQuery selector on a site using SiteQuery observable
 *(From: /examples/hello-query.js)*
 
 Execute jQuery selector to a depth of *n* on a website
