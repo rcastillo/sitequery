@@ -13,12 +13,13 @@ model crawls as async sequence of pages that map to a async sequence of selected
 [sudo] npm install sitequery
 
 ## Features
-`sitequery` models web crawls as an infinite streams using the rx.js and jsdom.
+`sitequery` has two main abstractions `SiteCrawl` and `SiteQuery` which provide the following features
 
-  - Any valid jQuery selector can be executed across an entire website (web crawl sequence)
   - web crawls can be paramerized to only go *n* levels deep
   - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once)
+  - Any valid jQuery selector can be executed across an entire website (web crawl sequence)
   - Supports the latest jQuery version
+
 
 ## Usage
 
