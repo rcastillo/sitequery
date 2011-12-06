@@ -10,9 +10,9 @@
 ## Features
 `sitequery` models web crawls as an infinite streams using the rx.js and jsdom.
 
-  - Any valid jQuery selector can be executed across an entire website (or crawl sequence)
-  - Crawls can be paramerized to only go *n* levels deep
-  - Site crawls have use a redis store to track visitation and insure a crawl is cycle-free
+  - Any valid jQuery selector can be executed across an entire website (web crawl sequence)
+  - web crawls can be paramerized to only go *n* levels deep
+  - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once)
   - Supports the latest jQuery version
 
 ## Crawling a website using SiteCrawl observable
