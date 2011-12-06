@@ -86,6 +86,7 @@ function() {
 
 ## ToDo
   - Make practical
+  - ~~Obey robots.txt~~
   - Performance testing (experiment with jquip)
   - Add post-processing backends
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
