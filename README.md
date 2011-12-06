@@ -79,4 +79,15 @@ function() {
 });
 ```
 
+## Credits
+  - [David Trejo](http://blog.dtrejo.com/scraping-made-easy-with-jquery-and-selectorga) for original jQuery web crawler concept
+  - [Matt Podwysocki](http://codebetter.com/matthewpodwysocki/2010/02/16/introduction-to-the-reactive-extensions-to-javascript/) for detailed examples and documentation of rx.js
+  - [Jeremy Van Gogh](http://blogs.msdn.com/b/jeffva/archive/2010/04/14/node-js-bindings-for-rxjs.aspx) the original project lead for rx.js
 
+## ToDo
+  - Add post-processing backends
+  - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
+  - Handling errors gracefully 
+  - Simulate auth into the target site when necessary
+  - Parallelisation of requests through rx.js ForkJoin
+  - Distribute high-cost computation
