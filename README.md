@@ -87,7 +87,8 @@ function() {
 ## ToDo
   - Make practical
   - ~~Obey robots.txt~~
-  - Performance testing (experiment with jquip)
+  - Performance profiling
+  - Experiment with [jquip](https://github.com/mythz/jquip)
   - Add post-processing backends
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
   - Handling parse errors more gracefully 
