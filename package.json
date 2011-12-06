@@ -1,0 +1,25 @@
+{
+  "name": "SiteQuery",
+  "description":"A reactive framework for asynchronous web crawling.",
+  "author" : "Roger H. Castillo <roger.castillo@loku.com> (http://tech.loku.com)",
+  "version": "0.1.0",
+  
+  "repository" :
+  { "type" : "git",
+   "url" : "https://github.com/rcastillo/sitequery"
+  },
+ "bugs" :
+  { "email" : "npm-@googlegroups.com",
+    "url" : "http://github.com/rcastillo/sitequery/issues"
+  },
+ 
+  "dependencies": {
+    "request": "2.1.1",
+    "underscore": "1.1.7",
+    "jsdom": "~0.2.10",
+    "jquery": "~1.6.3",
+    "robots": "~0.6.0",
+    "rx": "0.0.2",
+    "redis": "~0.7.1"
+  }
+}
