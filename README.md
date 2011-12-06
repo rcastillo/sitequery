@@ -1,5 +1,5 @@
 # sitequery
-*An reactive framework for asynchronous web crawling.*
+*A reactive framework for asynchronous web crawling.*
 
 ## Overview
 `sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables 
