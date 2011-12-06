@@ -90,12 +90,13 @@ function() {
   - Performance testing (experiment with jquip)
   - Add post-processing backends
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
-  - Handling parse errors gracefully 
+  - Handling parse errors more gracefully 
   - Simulate auth into the target site when necessary
   - Parallelisation of requests through rx.js ForkJoin
   - Add asynchronous parsing 
   - Distribute high-cost computation
   - Make crawl selection plugable
+  - Add code to term drain node.js Event queue to insure process termination
 
 ## License ##
 
