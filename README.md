@@ -1,11 +1,11 @@
 # sitequery
-*An impractical reactive framework for asynchronous web crawling.*
+*A reactive framework for asynchronous web crawling.*
 
 ## Overview
 `sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables 
 web crawling through server-side execution of [jQuery selectors](http://api.jquery.com/category/selectors/). `sitequery`
 uses [rx.js](http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript) to 
-model crawls as async sequence of pages that map to a async sequence of selected page elements.
+model crawls as async sequence of pages that map to a async sequence of jQuery selected page elements.
 
 ## Installation
 
@@ -13,13 +13,13 @@ model crawls as async sequence of pages that map to a async sequence of selected
 [sudo] npm install sitequery
 
 ## Features
-`sitequery` has two main abstractions `SiteCrawl` and `SiteQuery` which provide the following features
+`sitequery` has two main abstractions `SiteCrawl` and `SiteQuery` which provide the following features:
 
-  - web crawls can be paramerized to only go *n* levels deep
-  - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once)
+  - Web crawls can be paramerized to only go *n* levels deep
+  - Configurable crawl timeout                                               
+  - Web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once for a given `SiteCrawl` instance)
   - Any valid jQuery selector can be executed across an entire website (web crawl sequence)
-  - Supports the latest jQuery version
-
+  - Support for the latest jQuery version
 
 ## Usage
 
@@ -29,16 +29,16 @@ model crawls as async sequence of pages that map to a async sequence of selected
 Allows you to crawl to a depth of *n* into a website
 
 ```javascript
-var SiteCrawl = require('./lib/sitecrawl').SiteCrawl;
+var SiteCrawl = require('../lib/sitecrawl').SiteCrawl;
 
 // create a new SiteCrawl of depth 2 with a delay of 1s between next page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteCrawl = new SiteCrawl(query.url, query.depth, 1000);
+var siteCrawl = new SiteCrawl('http://loku.com',  2, 1000);
 
 // ask for the observable sequence and subscribe for the CrawlResult(s)
 siteCrawl.toObservable().Subscribe(function(crawlResult) {                 
-  console.log(crawlResult.body);
+  console.log(crawlResult.crawlLink.url.href);
 },
 // on err
 function(exn){
@@ -56,13 +56,13 @@ function(){
 Execute jQuery selector to a depth of *n* on a website
 
 ```javascript
-var siteQuery = require('./lib/sitequery').SiteQuery;
+var SiteQuery = require('../lib/sitequery').SiteQuery;
 
 // create a new SiteQuery of depth 2 with a delay of 1s between next page crawl
 // selecting for `img` elements on each page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteQuery = new SiteCrawl(url, query.depth, 1000, 'img');
+var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(elem) {
@@ -86,13 +86,18 @@ function() {
 
 ## ToDo
   - Make practical
-  - Performance testing (experiment with jquip)
+  - ~~Obey robots.txt~~
+  - Performance profiling
+  - Experiment with [jquip](https://github.com/mythz/jquip)
   - Add post-processing backends
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
-  - Handling parse errors gracefully 
+  - Handling parse errors more gracefully 
   - Simulate auth into the target site when necessary
   - Parallelisation of requests through rx.js ForkJoin
+  - Add asynchronous parsing 
   - Distribute high-cost computation
+  - Make crawl selection plugable
+  - Add code to term drain node.js Event queue to insure process termination
 
 ## License ##
 
