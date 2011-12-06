@@ -2,7 +2,10 @@
 *An impractical reactive framework for asynchronous web crawling.*
 
 ## Overview
-`sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables web crawling through server-side execution of [jQuery selectors](http://api.jquery.com/category/selectors/).
+`sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables 
+web crawling through server-side execution of [jQuery selectors](http://api.jquery.com/category/selectors/). `sitequery`
+uses [rx.js](http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript) to 
+model crawls as async sequence of pages that map to a async sequence of selected page elements.
 
 ## Installation
 
