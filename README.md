@@ -2,7 +2,7 @@
 *An impractical reactive framework for asynchronous web crawling.*
 
 ## Overview
-sitequery is reactive webcrawling framework that enables web crawling through server-side execution of jQuery selectors.
+`sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables web crawling through server-side execution of jQuery selectors.
 
 ## npm install
 [sudo] npm install sitequery
