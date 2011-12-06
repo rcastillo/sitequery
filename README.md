@@ -85,9 +85,11 @@ function() {
   - [Jeremy Van Gogh](http://blogs.msdn.com/b/jeffva/archive/2010/04/14/node-js-bindings-for-rxjs.aspx) the original project lead for rx.js
 
 ## ToDo
+  - Make practical
+  - Performance testing (experiment with jquip)
   - Add post-processing backends
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
-  - Handling errors gracefully 
+  - Handling parse errors gracefully 
   - Simulate auth into the target site when necessary
   - Parallelisation of requests through rx.js ForkJoin
   - Distribute high-cost computation
