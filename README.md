@@ -45,6 +45,7 @@ console.log('SiteCrawl complete');
 *(From: /examples/hello-query.js)*
 
 Execute jQuery selector to a depth of *n* on a website
+
 ```javascript
 var SiteCrawl = require('./lib/sitequery').SiteQuery;
 
