@@ -93,7 +93,7 @@ function() {
   - Graceful errors/degradation for incomplete data/dom for `SiteCrawl` 
   - Handling parse errors more gracefully 
   - Simulate auth into the target site when necessary
-  - Parallelisation of requests through rx.js ForkJoin
+  - Parallelisation of requests through rx.js [ForkJoin](http://codebetter.com/matthewpodwysocki/2010/04/23/introduction-to-the-reactive-extensions-for-javascript-going-parallel-with-forkjoin/)
   - Add asynchronous parsing 
   - Distribute high-cost computation
   - Make crawl selection plugable
