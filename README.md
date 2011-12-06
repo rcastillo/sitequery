@@ -29,7 +29,7 @@ model crawls as async sequence of pages that map to a async sequence of jQuery s
 Allows you to crawl to a depth of *n* into a website
 
 ```javascript
-var SiteCrawl = require('./lib/sitecrawl').SiteCrawl;
+var SiteCrawl = require('../lib/sitecrawl').SiteCrawl;
 
 // create a new SiteCrawl of depth 2 with a delay of 1s between next page
 // Note: Webcrawling is delayed and will not be executed
@@ -56,7 +56,7 @@ function(){
 Execute jQuery selector to a depth of *n* on a website
 
 ```javascript
-var siteQuery = require('./lib/sitequery').SiteQuery;
+var siteQuery = require('../lib/sitequery').SiteQuery;
 
 // create a new SiteQuery of depth 2 with a delay of 1s between next page crawl
 // selecting for `img` elements on each page
@@ -93,7 +93,9 @@ function() {
   - Handling parse errors gracefully 
   - Simulate auth into the target site when necessary
   - Parallelisation of requests through rx.js ForkJoin
+  - Add asynchronous parsing 
   - Distribute high-cost computation
+  - Make crawl selection plugable
 
 ## License ##
 
