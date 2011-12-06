@@ -37,7 +37,7 @@ function(exn){
 },
 // on crawl complete
 function(){
-console.log('SiteCrawl complete');
+  console.log('SiteCrawl complete');
 });
 ```
 
@@ -57,15 +57,15 @@ var siteCrawl = new SiteCrawl(url, query.depth, 1000, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteCrawl.toObservable().Subscribe(function(elem) {
-  // output the img src                 
+// output the img src                 
   console.log(elem.attr('src'));
 },
 // on err
-function(exn){
-  console.log('Something blow'd up with exception:' + exn);
+function(exn) {
+  console.log('Something blowd up with exception:' + exn);
 },
 // on crawl complete
-function(){
+function() {
   console.log('SiteQuery complete');
 });
 ```
