@@ -56,13 +56,13 @@ function(){
 Execute jQuery selector to a depth of *n* on a website
 
 ```javascript
-var siteQuery = require('../lib/sitequery').SiteQuery;
+var SiteQuery = require('../lib/sitequery').SiteQuery;
 
 // create a new SiteQuery of depth 2 with a delay of 1s between next page crawl
 // selecting for `img` elements on each page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteQuery = new SiteCrawl(url, query.depth, 1000, 'img');
+var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(elem) {
