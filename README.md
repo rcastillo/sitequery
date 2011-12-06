@@ -1,11 +1,11 @@
 # sitequery
-*An impractical reactive framework for asynchronous web crawling.*
+*An reactive framework for asynchronous web crawling.*
 
 ## Overview
 `sitequery` is a [reactive](http://en.wikipedia.org/wiki/Reactive_programming) webcrawling framework that enables 
 web crawling through server-side execution of [jQuery selectors](http://api.jquery.com/category/selectors/). `sitequery`
 uses [rx.js](http://channel9.msdn.com/Blogs/Charles/Introducing-RxJS-Reactive-Extensions-for-JavaScript) to 
-model crawls as async sequence of pages that map to a async sequence of selected page elements.
+model crawls as async sequence of pages that map to a async sequence of jQuery selected page elements.
 
 ## Installation
 
@@ -13,10 +13,10 @@ model crawls as async sequence of pages that map to a async sequence of selected
 [sudo] npm install sitequery
 
 ## Features
-`sitequery` has two main abstractions `SiteCrawl` and `SiteQuery` which provide the following features
+`sitequery` has two main abstractions `SiteCrawl` and `SiteQuery` which provide the following features:
 
   - web crawls can be paramerized to only go *n* levels deep
-  - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once)
+  - web crawls use a redis store to track visitation and insure a web crawl is cycle-free (no web page is crawled more than once for a given `SiteCrawl` instance)
   - Any valid jQuery selector can be executed across an entire website (web crawl sequence)
   - Supports the latest jQuery version
 
