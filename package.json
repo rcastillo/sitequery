@@ -18,7 +18,8 @@
     "jquery": "~1.6.3",
     "robots": "~0.6.0",
     "rx": "0.0.2",
-    "redis": "~0.7.1"
+    "redis": "~0.7.1",
+    "htmlparser2": "~2.1.1"
   },
   "devDependencies": {},
   "engines": {
