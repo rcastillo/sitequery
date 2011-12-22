@@ -2,7 +2,7 @@
   "name": "sitequery",
   "description": "A reactive framework for asynchronous web crawling.",
   "author": "Roger H. Castillo <roger.castillo@loku.com> (http://tech.loku.com)",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/rcastillo/sitequery.git"
