@@ -20,7 +20,7 @@ model crawls as async sequence of pages that map to a async sequence of jQuery s
 ## Installation
 
 ### Prerequisites
-`sitequery` requires a rediss installation see: http://redis.io/download
+`sitequery` requires a redis installation see: http://redis.io/download
 
 ### npm install
 [sudo] npm install sitequery
