@@ -12,9 +12,9 @@ var SiteQuery = require('../lib/sitequery').SiteQuery;
 var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
-siteQuery.toObservable().Subscribe(function(elem) {
+siteQuery.toObservable().Subscribe(function(result) {
 // output the img src                 
-  console.log(elem.attr('src'));
+  console.log(result.sourceUrl, result.elem.attr('src'));
 },
 // on err
 function(exn) {
