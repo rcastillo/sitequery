@@ -98,7 +98,7 @@ function() {
   - [Jeremy Van Gogh](http://blogs.msdn.com/b/jeffva/archive/2010/04/14/node-js-bindings-for-rxjs.aspx) the original project lead for rx.js
 
 ## ToDo
-  - Make practical
+  - ~~Make practical~~  - Big performance improvements with version post 0.1.3
   - ~~Obey robots.txt~~
   - Performance profiling
   - Experiment with [jquip](https://github.com/mythz/jquip)
