@@ -78,9 +78,9 @@ var SiteQuery = require('../lib/sitequery').SiteQuery;
 var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
-siteQuery.toObservable().Subscribe(function(elem) {
+siteQuery.toObservable().Subscribe(function(result.elem) {
 // output the img src                 
-  console.log(elem.attr('src'));
+  console.log(result.elem.attr('src'));
 },
 // on err
 function(exn) {
@@ -98,7 +98,7 @@ function() {
   - [Jeremy Van Gogh](http://blogs.msdn.com/b/jeffva/archive/2010/04/14/node-js-bindings-for-rxjs.aspx) the original project lead for rx.js
 
 ## ToDo
-  - Make practical
+  - ~~Make practical~~  - Big performance improvements with version post 0.1.3
   - ~~Obey robots.txt~~
   - Performance profiling
   - Experiment with [jquip](https://github.com/mythz/jquip)
