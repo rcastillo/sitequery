@@ -10,11 +10,18 @@ var fs = require('fs');
 var ext = fs.readFileSync('./sample-jquery-ext.js').toString();
 
 
-// create a new SiteQuery of depth 2 with a delay of 1s between next page crawl
-// selecting for `img` elements on each page
-// Note: Webcrawling is delayed and will not be executed
-// until Subscription
-var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img:regex(src,s3)', ext);
+// jQuery extension example broken due (I think) to jsdom
+// change...ToDo: Need to fix
+//######  ######  ####### #    # ####### #     # 
+//#     # #     # #     # #   #  #       ##    # 
+//#     # #     # #     # #  #   #       # #   # 
+//######  ######  #     # ###    #####   #  #  # 
+//#     # #   #   #     # #  #   #       #   # # 
+//#     # #    #  #     # #   #  #       #    ## 
+//######  #     # ####### #    # ####### #     # 
+
+
+var siteQuery = new SiteQuery({url:'http://loku.com'}, 'img:regex(src,s3)', ext);
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(result) {

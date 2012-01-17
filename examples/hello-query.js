@@ -9,7 +9,9 @@ var SiteQuery = require('../lib/sitequery').SiteQuery;
 // selecting for `img` elements on each page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
+
+var crawlOpts = {url:'http://loku.com', depth:2, delay:1000, maxCrawlTime: 100000}
+var siteQuery = new SiteQuery(crawlOpts, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(result) {
