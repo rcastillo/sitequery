@@ -44,10 +44,10 @@ Allows you to crawl to a depth of *n* into a website
 ```javascript
 var SiteCrawl = require('../lib/sitecrawl').SiteCrawl;
 
-// create a new SiteCrawl of depth 2 with a delay of 1s between next page
+// create a new SiteCrawl of depth 2 with a delay of 1s between next page and will only run for 10s
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteCrawl = new SiteCrawl('http://loku.com',  2, 1000);
+var siteCrawl = new SiteCrawl({url:'http://loku.com',  maxDepth:2, delay:1000, maxCrawlTime:10000});
 
 // ask for the observable sequence and subscribe for the CrawlResult(s)
 siteCrawl.toObservable().Subscribe(function(crawlResult) {                 
@@ -75,7 +75,7 @@ var SiteQuery = require('../lib/sitequery').SiteQuery;
 // selecting for `img` elements on each page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteQuery = new SiteQuery('http://loku.com', 2, 1000, 'img');
+var siteQuery = new SiteQuery({url:'http://loku.com', maxDepth:2, delay:1000}, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(result.elem) {
