@@ -6,3 +6,4 @@ exports.createObservablejQuery = require('./lib/rxjquery.js').createObservablejQ
 exports.createObservableSAX = require('./lib/rxsax').createObservableSAX;
 exports.SiteCrawl = require('./lib/sitecrawl').SiteCrawl;
 exports.SiteQuery = require('./lib/sitequery').SiteQuery;
+exports.CrawlSequence = require('./lib/crawlsequence').CrawlSequence;
