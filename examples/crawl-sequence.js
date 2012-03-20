@@ -24,5 +24,23 @@ function(exn){
 },
 // on crawl complete
 function(){
-  console.log('SiteCrawl complete');
+  console.log('CrawlSeqs complete');
+});
+
+
+var crawSeqStrings = new CrawlSequence(['http://google.com',
+                                 'http://loku.com',
+                                 'http://bing.com'], 1000);
+
+// ask for the observable sequence and subscribe for the CrawlResult(s)
+crawSeqStrings.Subscribe(function(crawlResult) {
+  console.log(crawlResult.crawlLink.url.href);
+},
+// on err
+function(exn){
+  console.log('Ooo dem Dukes...with exception:' + exn);
+},
+// on crawl complete
+function(){
+  console.log('CrawlSeq Strings complete');
 });
