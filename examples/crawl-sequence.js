@@ -59,7 +59,15 @@ var hrefArray = ['http://google.com',
                  'http://bing.com',
                  'http://loku.com',
                  'http://bing.com',
-                 'http://loku.com'];
+                 'http://loku.com',
+                 'http://loku.com',
+                 'http://loku.com',
+                 'http://loku.com',
+                 'http://loku.com',
+                 'http://loku.com',
+                 'http://loku.com'
+
+          ];
 
 
 // convert the array of hrefs to URL objecs
@@ -68,7 +76,7 @@ var urlStream = Rx.Observable.FromArray(hrefArray).Select(function(r){
 });
 
 // politness of 1s with crawl lasting no longer than 60s
-var cs = createCrawlSequence(urlStream, 1000, 60000);
+var cs = createCrawlSequence(urlStream, 3000);
 
 cs.Subscribe(function(r){
   console.log('createCrawlSequence result', r.crawlLink.url.href);
@@ -76,5 +84,6 @@ cs.Subscribe(function(r){
 function(err){},
 function(){
   console.log('crawl completed');
+  process.exit(0);
 });
 

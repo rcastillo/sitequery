@@ -8,7 +8,7 @@ var SiteCrawl = require('../lib/sitecrawl').SiteCrawl;
 // create a new SiteCrawl of depth 2 with a delay of 1s between next page
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
-var siteCrawl = new SiteCrawl({url:'http://loku.com', maxDepth:0});
+var siteCrawl = new SiteCrawl({url:'http://loku.com', maxDepth:1});
 
 // ask for the observable sequence and subscribe for the CrawlResult(s)
 siteCrawl.toObservable().Subscribe(function(crawlResult) {
@@ -21,4 +21,5 @@ function(exn){
 // on crawl complete
 function(){
   console.log('SiteCrawl complete');
+  process.exit(0);
 });

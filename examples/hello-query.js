@@ -10,12 +10,12 @@ var SiteQuery = require('../lib/sitequery').SiteQuery;
 // Note: Webcrawling is delayed and will not be executed
 // until Subscription
 
-var crawlOpts = {url:'http://loku.com', depth:2, delay:1000, maxCrawlTime: 100000}
+var crawlOpts = {url:'http://loku.com', maxDepth:2, delay:1000, maxCrawlTime: 100000}
 var siteQuery = new SiteQuery(crawlOpts, 'img');
 
 // ask for the observable sequence and subscribe for selected jQuery element(s)
 siteQuery.toObservable().Subscribe(function(result) {
-// output the img src                 
+// output the img src
   console.log(result.sourceUrl, result.elem.attr('src'));
 },
 // on err
@@ -25,4 +25,5 @@ function(exn) {
 // on crawl complete
 function() {
   console.log('SiteQuery complete');
+  process.exit(0);
 });
