@@ -4,22 +4,27 @@
  */
 
 var SiteQuery = require('../lib/sitequery').SiteQuery;
-    CrawlSequence = require('../lib/crawlsequence').CrawlSequence,
-    URL = require('url');
+    createCrawlSequence = require('../lib/crawlsequence').createCrawlSequence,
+    URL = require('url'),
+    Rx = require('rx').Rx;
 
 
-// create a new SiteCrawl of depth 2 with a delay of 1s between next page
-// Note: Webcrawling is delayed and will not be executed
-// until Subscription
-var crawlSeq = new CrawlSequence([URL.parse('http://google.com'),
-                                  URL.parse('http://loku.com'),
-                                  URL.parse('http://austinchronicle.com')], 1000);
+var hrefArray = ['http://google.com',
+                 'http://loku.com',
+                 'http://yahoo.com',
+                 'http://bing.com'];
 
 
-var crawlOpts = {crawlObservable: crawlSeq,
-                 depth:2,
-                 delay:1000,
-                 maxCrawlTime: 100000};
+// convert the array of hrefs to URL objecs
+var urlStream = Rx.Observable.FromArray(hrefArray).Select(function(r){
+  return URL.parse(r);
+});
+
+
+// politness of 1s with crawl lasting no longer than 60s
+var cs = createCrawlSequence(urlStream, 1000);
+
+var crawlOpts = {crawlObservable: cs};
 
 // go get all the images out of the sequence of pages
 var siteQuery = new SiteQuery(crawlOpts, 'img');
